@@ -18,15 +18,13 @@ struct dog
 	char *owner;
 };
 
-/**
- * init_dog - initializes a struct dog
- * @d: pointer to struct dog to initialize
- * @name: name of the dog
- * @age: age of the dog
- * @owner: name of the owner
- * Description: initializes the struct dog pointed to by d with th
- * specified name, age, and owner
- */
+/** functions prototypes */
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
+
+/**
+ * dog_t - typedef for struct dog
+ */
+typedef struct dog dog_t;
+
 #endif
