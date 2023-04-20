@@ -10,6 +10,8 @@
 int main(int argc, char **argv)
 {
 	int i, num_bytes;
+	int (*ptr)(int, char **) = main;
+	unsigned char opcode;
 
 	if (argc != 2)
 	{
@@ -27,7 +29,12 @@ int main(int argc, char **argv)
 
 	for (i = 0; i < num_bytes; i++)
 	{
-		printf("%02hhx ", *((char *)main + i));
+		opcode = *(unsigned char *)ptr;
+		printf("%.2x", opcode);
+		if (i == num_bytes - 1)
+			continue;
+		printf(" ");
+		ptr++;
 	}
 	printf("\n");
 
